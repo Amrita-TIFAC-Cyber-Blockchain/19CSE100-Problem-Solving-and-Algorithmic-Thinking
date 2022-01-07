@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Radhakrishnan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-01-07 12:38:10 PM"/>
+        <attribute name="created" value="UmFkaGFrcmlzaG5hbjtERVNLVE9QLU1CUklNVkw7MjAyMi0wMS0wNzsxMTo0MDo1NCBBTTszNzIw"/>
+        <attribute name="edited" value="UmFkaGFrcmlzaG5hbjtERVNLVE9QLU1CUklNVkw7MjAyMi0wMS0wNzsxMjozODoxMCBQTTs0OzM4NDY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Declare the variables"/>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <comment text="Receive inputs from the user"/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <comment text="functions are called by passing the parameters a and b"/>
+            <call expression="sumsqv1(a,b)"/>
+            <call expression="subsq(a,b)"/>
+        </body>
+    </function>
+    <function name="square" type="Integer" variable="result">
+        <parameters>
+            <parameter name="x" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="result" type="Integer" array="False" size=""/>
+            <assign variable="result" expression="x*x"/>
+            <comment text="function returns the value back to the called function"/>
+        </body>
+    </function>
+    <function name="subsq" type="None" variable="">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <comment text="calls another function &quot;square&quot; which returns the value back to &quot;subsq&quot; function along with the Control"/>
+            <assign variable="c" expression="(square(a) + square(b) - 2*a*b)"/>
+            <output expression="c" newline="True"/>
+        </body>
+    </function>
+    <function name="sumsq" type="None" variable="">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <comment text="calls another function &quot;square&quot; which returns the value back to &quot;sumsq&quot; function along with the Control"/>
+            <assign variable="c" expression="(square(a) + square(b) + 2*a*b)"/>
+            <output expression="c" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

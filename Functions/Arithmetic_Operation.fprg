@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value="Mathematical Operations"/>
+        <attribute name="authors" value="Ramaguru Radhakrishnan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-01-07 12:39:14 PM"/>
+        <attribute name="created" value="UmFkaGFrcmlzaG5hbjtERVNLVE9QLU1CUklNVkw7MjAyMi0wMS0wNjswOTo0OToxNSBQTTszNzQ3"/>
+        <attribute name="edited" value="UmFkaGFrcmlzaG5hbjtERVNLVE9QLU1CUklNVkw7MjAyMi0wMS0wNzsxMjozOToxNCBQTTs2OzM4NTM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Declare the variables"/>
+            <declare name="a" type="Integer" array="False" size=""/>
+            <declare name="b" type="Integer" array="False" size=""/>
+            <comment text="Receive inputs from the user"/>
+            <input variable="a"/>
+            <input variable="b"/>
+            <comment text="Call the functions by passing the parameters a and b"/>
+            <call expression="add ( a, b )"/>
+            <comment text="After the execution of add function, ONLY the control is returned to Main function (no value is returned)"/>
+            <call expression="sub ( a, b )"/>
+            <call expression="mul ( a, b )"/>
+            <call expression="div ( a, b )"/>
+        </body>
+    </function>
+    <function name="add" type="None" variable="">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <comment text="All operations are completed within the function"/>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="a+b"/>
+            <output expression="c" newline="True"/>
+        </body>
+    </function>
+    <function name="div" type="None" variable="">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <comment text="All operations are completed within the function"/>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <comment text="error handling or input validation using if block"/>
+            <if expression="b!=0">
+                <then>
+                    <assign variable="c" expression="a/b"/>
+                    <output expression="c" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Divide by Zero&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="mul" type="None" variable="">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <comment text="All operations are completed within the function"/>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="a * b"/>
+            <output expression="c" newline="True"/>
+        </body>
+    </function>
+    <function name="sub" type="None" variable="">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <comment text="All operations are completed within the function"/>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <assign variable="c" expression="a-b"/>
+            <output expression="c" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
