@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="gokul"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-02-02 05:19:09 PM"/>
+        <attribute name="created" value="Z29rdWw7REVTS1RPUC00NkRWSDVROzIwMjItMDEtMjY7MDk6NDE6NDUgUE07Mjg3Nw=="/>
+        <attribute name="edited" value="Z29rdWw7REVTS1RPUC00NkRWSDVROzIwMjItMDItMDI7MDU6MTk6MDkgUE07NzsyOTg3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="number1" type="Integer" array="False" size=""/>
+            <declare name="digit1" type="Integer" array="True" size="1"/>
+            <output expression="&quot;Enter first digit of number 1: &quot;" newline="False"/>
+            <input variable="digit1[0]"/>
+            <declare name="digit2" type="Integer" array="True" size="1"/>
+            <output expression="&quot;Enter second digit of number 1: &quot;" newline="False"/>
+            <input variable="digit2[0]"/>
+            <assign variable="number1" expression="createNumber(digit1,digit2)"/>
+            <output expression="&quot;Number 1 is: &quot;" newline="False"/>
+            <output expression="number1" newline="True"/>
+            <declare name="number2" type="Integer" array="False" size=""/>
+            <declare name="digit3" type="Integer" array="True" size="1"/>
+            <output expression="&quot;Enter the first digit of number 2: &quot;" newline="False"/>
+            <input variable="digit3[0]"/>
+            <declare name="digit4" type="Integer" array="True" size="1"/>
+            <output expression="&quot;Enter the second digit of number 2: &quot;" newline="False"/>
+            <input variable="digit4[0]"/>
+            <assign variable="number2" expression="createNumber(digit3,digit4)"/>
+            <output expression="&quot;The second number is: &quot;" newline="False"/>
+            <output expression="number2" newline="True"/>
+            <call expression="addition(number1,number2)"/>
+            <call expression="subtraction(number1,number2)"/>
+            <call expression="multiplication(number1,number2)"/>
+            <call expression="quotient(number1,number2)"/>
+            <call expression="remainder(number1,number2)"/>
+        </body>
+    </function>
+    <function name="addition" type="None" variable="">
+        <parameters>
+            <parameter name="number1" type="Integer" array="False"/>
+            <parameter name="number2" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="sum" type="Integer" array="False" size=""/>
+            <assign variable="sum" expression="number1 + number2"/>
+            <output expression="&quot;Sum of number 1 and number 2 is: &quot;" newline="False"/>
+            <output expression="sum" newline="True"/>
+        </body>
+    </function>
+    <function name="multiplication" type="None" variable="">
+        <parameters>
+            <parameter name="number1" type="Integer" array="False"/>
+            <parameter name="number2" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="product" type="Integer" array="False" size=""/>
+            <assign variable="product" expression="number1 * number2"/>
+            <output expression="&quot;The product of number 1 and number 2 is: &quot;" newline="False"/>
+            <output expression="product" newline="True"/>
+        </body>
+    </function>
+    <function name="createNumber" type="Integer" variable="number1">
+        <parameters>
+            <parameter name="digit1" type="Integer" array="True"/>
+            <parameter name="digit2" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="number1" type="Integer" array="False" size=""/>
+            <assign variable="number1" expression="digit1[0] * 10 + digit2[0]"/>
+        </body>
+    </function>
+    <function name="quotient" type="None" variable="">
+        <parameters>
+            <parameter name="number1" type="Integer" array="False"/>
+            <parameter name="number2" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="quotient" type="Integer" array="False" size=""/>
+            <assign variable="quotient" expression="number1 / number2"/>
+            <output expression="&quot;The quotient upon dividing number 1 by number 2 is: &quot;" newline="False"/>
+            <output expression="quotient" newline="True"/>
+        </body>
+    </function>
+    <function name="remainder" type="None" variable="">
+        <parameters>
+            <parameter name="number1" type="Integer" array="False"/>
+            <parameter name="number2" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="remainder" type="Integer" array="False" size=""/>
+            <assign variable="remainder" expression="number1 % number2"/>
+            <output expression="&quot;The remainder on dividing number 1 by number 2 is: &quot;" newline="False"/>
+            <output expression="remainder" newline="True"/>
+        </body>
+    </function>
+    <function name="subtraction" type="None" variable="">
+        <parameters>
+            <parameter name="number1" type="Integer" array="False"/>
+            <parameter name="number2" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="difference" type="Integer" array="False" size=""/>
+            <assign variable="difference" expression="number1 - number2"/>
+            <output expression="&quot;The difference of number 1 and number 2 is: &quot;" newline="False"/>
+            <output expression="difference" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="dell"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-02-02 05:48:01 PM"/>
+        <attribute name="created" value="ZGVsbDtERVNLVE9QLVZSQjJSSzI7MjAyMi0wMi0wMjswMjowMzo0NCBQTTsyNzU4"/>
+        <attribute name="edited" value="ZGVsbDtERVNLVE9QLVZSQjJSSzI7MjAyMi0wMi0wMjswMjozNTozOCBQTTsyNztkZWxsO0RFU0tUT1AtVlJCMlJLMjsyMDIyLTAxLTI0OzExOjA2OjQxIFBNO0NCLkVOLlU0Q1lTMjEwMzlfTUFOQkVORFJBIFNBVFBBVEhZX09OTElORSBCQU5LSU5HIFNFUlZJQ0VTLmZwcmc7MTA0MTY="/>
+        <attribute name="edited" value="ZGVsbDtERVNLVE9QLVZSQjJSSzI7MjAyMi0wMi0wMjswNTo0ODowMSBQTTsxODsyOTI3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;WELCOME TO ONLINE BANKING SERVICES&quot;" newline="True"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <comment text="i - INDEX&#13;&#10;"/>
+            <assign variable="i" expression="0"/>
+            <declare name="N" type="Integer" array="False" size=""/>
+            <comment text="N - NUMBER OF CUSTOMERS"/>
+            <output expression="&quot; Enter the number of customers whose bank account details have to be entered : &quot;" newline="True"/>
+            <input variable="N"/>
+            <output expression="&quot;The number of customers whose bank account details have to be entered is &quot; &amp; N" newline="True"/>
+            <if expression="N &gt; 1">
+                <then>
+                    <declare name="X" type="Integer" array="True" size="N"/>
+                    <comment text="X - BALANCE AMOUNT OF THE CUSTOMER"/>
+                    <declare name="Balance" type="Integer" array="False" size=""/>
+                    <comment text="Balance - FOR INPUT ONLY"/>
+                    <for variable="i" start="0" end="N - 1" direction="inc" step="1">
+                        <output expression="&quot;Customer &quot; &amp; i+1 &amp; &quot; , please enter the balance of your bank account : &quot;" newline="True"/>
+                        <input variable="Balance"/>
+                        <assign variable="X[i]" expression="Balance"/>
+                    </for>
+                    <output expression="&quot;Customer bank balance details&quot;" newline="True"/>
+                    <for variable="i" start="0" end="N - 1" direction="inc" step="1">
+                        <output expression="&quot;Customer &quot; &amp; i+1 &amp; &quot; has bank balance amount of &#8377; &quot; &amp; X[i]" newline="True"/>
+                    </for>
+                    <call expression="WITHDRAWAL ( X , N , i )"/>
+                    <call expression="DEPOSIT ( X , N , i )"/>
+                    <call expression="REFER ( X , N , i )"/>
+                </then>
+                <else>
+                    <declare name="x" type="Integer" array="False" size=""/>
+                    <comment text="x - BALANCE AMOUNT OF THE CUSTOMER"/>
+                    <output expression="&quot;Enter the balance of your bank account : &quot;" newline="True"/>
+                    <input variable="x"/>
+                    <output expression="&quot;You have a bank balance amount of &#8377; &quot; &amp; x" newline="True"/>
+                    <call expression="withdrawmoney ( x )"/>
+                    <call expression="depositmoney ( x )"/>
+                    <call expression="referral ( x )"/>
+                </else>
+            </if>
+            <output expression="&quot; THANK YOU &quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="DEPOSIT" type="None" variable="X">
+        <parameters>
+            <parameter name="X" type="Integer" array="True"/>
+            <parameter name="N" type="Integer" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="D" type="Integer" array="True" size="N"/>
+            <comment text="D - DEPOSIT AMOUNT OF THE CUSTOMER"/>
+            <declare name="deposit" type="Integer" array="False" size=""/>
+            <comment text="deposit - FOR INPUT ONLY"/>
+            <for variable="i" start="0" end="N - 1" direction="inc" step="1">
+                <output expression="&quot;Customer &quot; &amp; i+1 &amp; &quot; , please enter the amount to be desposited in your bank account :&quot;" newline="True"/>
+                <input variable="deposit"/>
+                <assign variable="D[i]" expression="deposit"/>
+            </for>
+            <for variable="i" start="0" end="N - 1" direction="inc" step="1">
+                <assign variable="X[i]" expression="X[i] + D[i]"/>
+                <output expression="&quot; Customer &quot; &amp; i+1 &amp; &quot; , your account has been with credited with &#8377; &quot; &amp; D[i] &amp; &quot; and the current balance in your account is &#8377; &quot; &amp; X[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="depositmoney" type="Integer" variable="x">
+        <parameters>
+            <parameter name="x" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="d" type="Integer" array="False" size=""/>
+            <comment text="d - DEPOSIT AMOUNT OF THE CUSTOMER"/>
+            <output expression="&quot;Enter the amount to be desposited in your bank account :&quot;" newline="True"/>
+            <input variable="d"/>
+            <assign variable="x" expression="x + d"/>
+            <output expression="&quot;Your account has been credited with &#8377; &quot; &amp; d &amp; &quot; and the current balance of your account is &#8377; &quot; &amp; x" newline="True"/>
+        </body>
+    </function>
+    <function name="REFER" type="None" variable="">
+        <parameters>
+            <parameter name="X" type="Integer" array="True"/>
+            <parameter name="N" type="Integer" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Referral" type="String" array="False" size=""/>
+            <comment text="Referral - BONUS OF &#8377; 50"/>
+            <for variable="i" start="0" end="N - 1" direction="inc" step="1">
+                <output expression="&quot; Has Customer &quot; &amp; i+1 &amp; &quot; ever referred our banking services to his/her friend or family member ? &quot;" newline="True"/>
+                <input variable="Referral"/>
+                <if expression="Referral == &quot;Y&quot; or Referral == &quot;y&quot; or Referral == &quot;Yes&quot; or Referral == &quot;yes&quot; or Referral == &quot;YES&quot;">
+                    <then>
+                        <output expression="&quot; Customer &quot; &amp; i+1 &amp; &quot; your account has been with credited with a bonus of &#8377; 50 since you have referred your friend or your family member about our banking services.  &quot;" newline="True"/>
+                        <assign variable="X[i]" expression="X[i] + 50"/>
+                        <output expression="&quot; Customer &quot; &amp; i+1 &amp; &quot; , your account has been with credited with &#8377; 50 and the current balance in your account is &#8377; &quot; &amp; X[i]" newline="True"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Refer our banking services to your friend or your family member to get a bonus of &#8377; 50.&quot;" newline="True"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="referral" type="None" variable="">
+        <parameters>
+            <parameter name="x" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="r" type="String" array="False" size=""/>
+            <comment text="r - BONUS OF &#8377; 50"/>
+            <output expression="&quot; Have you ever referred our banking services to your friend or family member ? &quot;" newline="True"/>
+            <input variable="r"/>
+            <if expression="r == &quot;Y&quot; or r == &quot;y&quot; or r == &quot;Yes&quot; or r == &quot;yes&quot; or r == &quot;YES&quot;">
+                <then>
+                    <output expression="&quot; Your account has been with credited with a bonus of &#8377; 50 since you have referred your friend or your family member about our banking services.  &quot;" newline="True"/>
+                    <assign variable="x" expression="x + 50"/>
+                    <output expression="&quot; Your account has been with credited with &#8377; 50 and the current balance of your account is &#8377; &quot; &amp; x" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Refer our banking services to your friend or your family member to get a bonus of &#8377; 50.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="WITHDRAWAL" type="None" variable="X">
+        <parameters>
+            <parameter name="X" type="Integer" array="True"/>
+            <parameter name="N" type="Integer" array="False"/>
+            <parameter name="i" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="W" type="Integer" array="True" size="N"/>
+            <comment text="W - WITHDRAWAL AMOUNT OF THE CUSTOMER"/>
+            <declare name="Withdraw" type="Integer" array="False" size=""/>
+            <comment text="Withdraw - FOR INPUT ONLY"/>
+            <for variable="i" start="0" end="N - 1" direction="inc" step="1">
+                <output expression="&quot; Customer &quot; &amp; i+1 &amp; &quot; , enter the amount you want to withdraw from your bank account : &quot;" newline="True"/>
+                <input variable="Withdraw"/>
+                <assign variable="W[i]" expression="Withdraw"/>
+            </for>
+            <for variable="i" start="0" end="N - 1" direction="inc" step="1">
+                <if expression="X[i] &gt;= 500">
+                    <then>
+                        <if expression="W[i] &gt; X[i]">
+                            <then>
+                                <output expression="&quot; Error : Customer &quot; &amp; i+1 &amp; &quot; does not have sufficient funds to proceed with this transaction.&quot;" newline="True"/>
+                                <output expression="&quot; Customer &quot; &amp; i+1 &amp; &quot; has a current balance of &#8377; &quot; &amp; X[i]" newline="True"/>
+                            </then>
+                            <else>
+                                <assign variable="X[i]" expression="X[i] - W[i]"/>
+                                <output expression="&quot; The amount of money which has been debited from the balance account of Customer &quot; &amp; i+1 &amp; &quot; is &#8377; &quot; &amp; W[i]&amp; &quot;. The current balance of Customer &quot; &amp; i+1 &amp; &quot; 's bank account is &#8377; &quot; &amp; X[i]" newline="True"/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <output expression="&quot; Error : Customer &quot; &amp; i+1 &amp; &quot; does not have sufficient funds to proceed with this transaction.&quot;" newline="True"/>
+                        <output expression="&quot; Customer &quot; &amp; i+1 &amp; &quot; must have a minimum balance of &#8377; 500. &quot;" newline="True"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+    <function name="withdrawmoney" type="Integer" variable="x">
+        <parameters>
+            <parameter name="x" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="w" type="Integer" array="False" size=""/>
+            <comment text="w - WITHDRAWAL AMOUNT OF THE CUSTOMER&#13;&#10;"/>
+            <output expression="&quot;Enter the amount , you want to withdraw from your bank account : &quot;" newline="True"/>
+            <input variable="w"/>
+            <if expression="x &gt;= 500">
+                <then>
+                    <if expression="w &gt; x">
+                        <then>
+                            <output expression="&quot; Error : You do not have sufficient funds to proceed with this transaction.&quot;" newline="True"/>
+                            <output expression="&quot;The current balance of your account is &#8377; &quot; &amp; x" newline="True"/>
+                        </then>
+                        <else>
+                            <assign variable="x" expression="x - w"/>
+                            <output expression="&quot; The amount of money which has been debited from your balance account is &#8377; &quot; &amp; w &amp; &quot;. The current balance of your bank account is &#8377; &quot; &amp; x" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot; Error : You do not have sufficient funds to proceed with this transaction.&quot;" newline="True"/>
+                    <output expression="&quot; You must have a minimum balance of &#8377; 500. &quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

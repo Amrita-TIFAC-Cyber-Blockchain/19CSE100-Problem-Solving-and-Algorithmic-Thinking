@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Admin"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-02-02 05:59:19 PM"/>
+        <attribute name="created" value="QWRtaW47REVTS1RPUC1DMDFVUTVLOzIwMjItMDEtMjQ7MDc6MDc6NTcgUE07MjgxMw=="/>
+        <attribute name="edited" value="QWRtaW47REVTS1RPUC1DMDFVUTVLOzIwMjItMDEtMjQ7MTE6MDg6MDEgUE07NTA7Mjk1OA=="/>
+        <attribute name="edited" value="U2FuamFpIFByYXNoYWQ7TEFQVE9QLTE4T09KTENIOzIwMjItMDEtMjk7MTI6MTU6MzMgUE07Mjk7Mzg0MQ=="/>
+        <attribute name="edited" value="dmluYXk7REVTS1RPUC1UUjRRRUdPOzIwMjItMDItMDI7MDU6NTk6MTkgUE07MzszMDQ1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="x" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <input variable="x"/>
+            <for variable="i" start="1" end="x" direction="inc" step="1">
+                <output expression="&quot;Enter Data :&quot; &amp; i" newline="True"/>
+                <declare name="parameter" type="Integer" array="True" size="3"/>
+                <output expression="&quot;Enter hardness&quot;" newline="True"/>
+                <input variable="parameter[0]"/>
+                <output expression="&quot;Enter carbon content&quot;" newline="True"/>
+                <input variable="parameter[1]"/>
+                <output expression="&quot;Enter tensile strength&quot;" newline="True"/>
+                <input variable="parameter[2]"/>
+                <call expression="gradeSteel(parameter[0],parameter[1],parameter[2])"/>
+            </for>
+            <output expression="&quot;END&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="gradeSteel" type="None" variable="">
+        <parameters>
+            <parameter name="parameter" type="Real" array="False"/>
+            <parameter name="parameter1" type="Real" array="False"/>
+            <parameter name="parameter2" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <if expression="parameter&gt;50&amp;&amp;parameter1&lt;0.7&amp;&amp;parameter2&gt;5600">
+                <then>
+                    <output expression="&quot;Grade is 10&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="parameter&gt;50&amp;&amp;parameter1&lt;0.7&amp;&amp;parameter2&lt;=5600">
+                        <then>
+                            <output expression="&quot;Grade is 9&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="parameter&lt;=50&amp;&amp;parameter1&lt;0.7&amp;&amp;parameter2&gt;5600">
+                                <then>
+                                    <output expression="&quot;Grade is 8&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="parameter&gt;50&amp;&amp;parameter1&gt;=0.7&amp;&amp;parameter2&gt;5600">
+                                        <then>
+                                            <output expression="&quot;Grade is 7&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="parameter&lt;=50&amp;&amp;parameter1&gt;=0.7&amp;&amp;parameter2&gt;5600 or parameter&gt;50&amp;&amp;parameter1&gt;=0.7&amp;&amp;parameter2&lt;=5600 or parameter&lt;=50&amp;&amp;parameter1&lt;0.7&amp;&amp;parameter2&lt;=5600">
+                                                <then>
+                                                    <output expression="&quot;Grade is 6&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;Grade is 5&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

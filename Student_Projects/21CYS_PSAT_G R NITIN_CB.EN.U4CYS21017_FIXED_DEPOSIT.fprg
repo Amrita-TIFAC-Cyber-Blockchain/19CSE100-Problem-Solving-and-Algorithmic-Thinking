@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="nitin"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-02-02 07:00:26 PM"/>
+        <attribute name="created" value="bml0aW47QVNVUzsyMDIyLTAxLTIyOzA3OjMzOjI0IFBNOzIxMzY="/>
+        <attribute name="edited" value="bml0aW47QVNVUzsyMDIyLTAyLTAyOzA3OjAwOjI2IFBNOzE2OzIyOTM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="P" type="Real" array="False" size=""/>
+            <declare name="R" type="Real" array="False" size=""/>
+            <declare name="T" type="Real" array="False" size=""/>
+            <input variable="P"/>
+            <input variable="T"/>
+            <if expression="T=1">
+                <then>
+                    <assign variable="R" expression="3.0"/>
+                    <call expression="Interest(P,R,T)"/>
+                </then>
+                <else>
+                    <if expression="T=2">
+                        <then>
+                            <assign variable="R" expression="4.0"/>
+                            <call expression="Interest(P,R,T)"/>
+                        </then>
+                        <else>
+                            <if expression="T=3">
+                                <then>
+                                    <assign variable="R" expression="5"/>
+                                    <call expression="Interest(P,R,T)"/>
+                                </then>
+                                <else>
+                                    <if expression="T=4">
+                                        <then>
+                                            <assign variable="R" expression="5.5"/>
+                                            <call expression="Interest(P,R,T)"/>
+                                        </then>
+                                        <else>
+                                            <if expression="T&gt;=5">
+                                                <then>
+                                                    <assign variable="R" expression="6.0"/>
+                                                    <call expression="Interest(P,R,T)"/>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Interest" type="None" variable="">
+        <parameters>
+            <parameter name="P" type="Real" array="False"/>
+            <parameter name="R" type="Real" array="False"/>
+            <parameter name="T" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="I" type="Real" array="False" size=""/>
+            <declare name="A" type="Real" array="False" size=""/>
+            <declare name="c" type="Integer" array="False" size=""/>
+            <for variable="c" start="1" end="T" direction="inc" step="1">
+                <assign variable="I" expression="P*R*T/100"/>
+                <assign variable="P" expression="P+I"/>
+            </for>
+            <assign variable="A" expression="P+I"/>
+            <output expression="&quot;The updated Principal is &quot; &amp; P" newline="True"/>
+            <output expression="&quot;The Simple Interest is &quot; &amp; I" newline="True"/>
+            <output expression="&quot;The Amount is &quot; &amp; A" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

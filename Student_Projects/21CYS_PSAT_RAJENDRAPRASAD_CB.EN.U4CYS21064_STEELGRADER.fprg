@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="rajendraprasad"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-01-26 11:10:16 PM"/>
+        <attribute name="created" value="cmFqZW5kcmFwcmFzYWQ7UkFKRU5EUkFQUkFTQUQ7MjAyMS0wMS0yNjsxMDowNjoxOCBQTTszNzc0"/>
+        <attribute name="edited" value="cmFqZW5kcmFwcmFzYWQ7UkFKRU5EUkFQUkFTQUQ7MjAyMi0wMS0yNjsxMToxMDoxNiBQTTsxOzM4Nzc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="data" type="Real" array="True" size="3"/>
+            <declare name="temp" type="Real" array="False" size=""/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <output expression="&quot;How many steels you want to Grade: &quot;" newline="False"/>
+            <input variable="n"/>
+            <for variable="i" start="1" end="n" direction="inc" step="1">
+                <output expression="&quot;Enter Data for &quot; &amp; ToString(i) &amp; &quot;: &quot;" newline="False"/>
+                <for variable="j" start="0" end="2" direction="inc" step="1">
+                    <input variable="temp"/>
+                    <assign variable="data[j]" expression="temp"/>
+                </for>
+                <output expression="&quot;Grade for &quot; &amp; ToString(i) &amp; &quot;: &quot; &amp; gradeSteel(data)" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="gradeSteel" type="Integer" variable="grade">
+        <parameters>
+            <parameter name="data" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <declare name="grade" type="Integer" array="False" size=""/>
+            <declare name="hardness" type="Integer" array="False" size=""/>
+            <declare name="cc" type="Real" array="False" size=""/>
+            <declare name="tenstrength" type="Integer" array="False" size=""/>
+            <assign variable="hardness" expression="data[0]"/>
+            <assign variable="cc" expression="data[1]"/>
+            <assign variable="tenstrength" expression="data[2]"/>
+            <if expression="hardness &gt; 50 &amp;&amp; cc &lt; 0.7 &amp;&amp; tenstrength &gt; 5600">
+                <then>
+                    <assign variable="grade" expression="10"/>
+                </then>
+                <else>
+                    <if expression="hardness &gt; 50 &amp;&amp; cc &lt; 0.7">
+                        <then>
+                            <assign variable="grade" expression="9"/>
+                        </then>
+                        <else>
+                            <if expression="cc &lt; 0.7 &amp;&amp; tenstrength &gt; 5600">
+                                <then>
+                                    <assign variable="grade" expression="8"/>
+                                </then>
+                                <else>
+                                    <if expression="hardness &gt; 50 &amp;&amp; tenstrength &gt; 5600">
+                                        <then>
+                                            <assign variable="grade" expression="7"/>
+                                        </then>
+                                        <else>
+                                            <if expression="hardness &gt; 50 || cc &lt; 0.7 || tenstrength &gt; 5600">
+                                                <then>
+                                                    <assign variable="grade" expression="6"/>
+                                                </then>
+                                                <else>
+                                                    <assign variable="grade" expression="5"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

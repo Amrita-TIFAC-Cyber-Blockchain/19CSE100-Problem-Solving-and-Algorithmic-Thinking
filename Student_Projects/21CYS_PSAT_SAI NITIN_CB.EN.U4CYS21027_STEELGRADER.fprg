@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="kssni"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-01-29 07:36:20 PM"/>
+        <attribute name="created" value="a3Nzbmk7REVTS1RPUC1KSUUwM0VTOzIwMjItMDEtMjk7MDU6NTM6MDEgUE07Mjg3OA=="/>
+        <attribute name="edited" value="a3Nzbmk7REVTS1RPUC1KSUUwM0VTOzIwMjItMDEtMjk7MDc6MzY6MjAgUE07ODsyOTk3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Num" type="Integer" array="False" size=""/>
+            <comment text="Num = Number of Steels you want to grade?"/>
+            <input variable="Num"/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <for variable="n" start="1" end="Num" direction="inc" step="1">
+                <call expression="gradeSteel(Num)"/>
+            </for>
+        </body>
+    </function>
+    <function name="gradeSteel" type="None" variable="">
+        <parameters>
+            <parameter name="Num" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Hardness" type="Integer" array="False" size=""/>
+            <declare name="Carbon" type="Integer" array="False" size=""/>
+            <comment text="Carbon = Carbon Content in the Steel"/>
+            <declare name="Strength" type="Integer" array="False" size=""/>
+            <comment text="Strength = Tensile Strength of Steel"/>
+            <input variable="Hardness"/>
+            <input variable="Carbon"/>
+            <input variable="Strength"/>
+            <if expression="Hardness&gt;50&amp;&amp;Carbon&lt;0.7&amp;&amp;Strength&gt;5600">
+                <then>
+                    <output expression="&quot;The Steel is a GRADE 10&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="Hardness&gt;50">
+                        <then>
+                            <if expression="Carbon&lt;0.7&amp;&amp;Strength&lt;5600">
+                                <then>
+                                    <output expression="&quot;The Steel is a GRADE 9&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="Strength&gt;5600">
+                                        <then>
+                                            <output expression="&quot;The Steel is a GRADE 7&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;The Steel is a GRADE 6&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="Carbon&lt;0.7&amp;&amp;Strength&gt;5600">
+                                <then>
+                                    <output expression="&quot;The Steel is a GRADE 8&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="Carbon&lt;0.7&amp;&amp;Strength&lt;5600">
+                                        <then>
+                                            <output expression="&quot;The Steel is a GRADE 6&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="Carbon&gt;0.7&amp;&amp;Strength&gt;5600">
+                                                <then>
+                                                    <output expression="&quot;The Steel is a GRADE 6&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;The Steel is a GRADE 5&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
