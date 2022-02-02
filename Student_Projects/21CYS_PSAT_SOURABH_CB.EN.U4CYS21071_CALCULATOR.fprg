@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="soura"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-02-02 01:12:24 AM"/>
+        <attribute name="created" value="c291cmE7REVTS1RPUC1LMTc4RTEzOzIwMjItMDEtMjk7MTA6MzY6MjkgUE07MjgyNA=="/>
+        <attribute name="edited" value="c291cmE7REVTS1RPUC1LMTc4RTEzOzIwMjItMDItMDI7MDE6MTI6MjQgQU07OTsyOTA2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="t" type="Integer" array="False" size=""/>
+            <assign variable="t" expression="0"/>
+            <while expression="t = 0">
+                <output expression="&quot;************new calculations**********&quot;" newline="True"/>
+                <output expression="&quot;Please note that this is a simple calculator so please make sure to only input single or two digit numbers and add a '0' in the first input if your number is single digit, Also provide non-zero input&quot;" newline="True"/>
+                <declare name="f1" type="Integer" array="True" size="2"/>
+                <declare name="f2" type="Integer" array="True" size="2"/>
+                <output expression="&quot;enter the first digit of the first number below&quot;" newline="True"/>
+                <input variable="f1[0]"/>
+                <output expression="&quot;enter the second digit of the first number below&quot;" newline="True"/>
+                <input variable="f1[1]"/>
+                <output expression="&quot;enter the first digit of the second number below&quot;" newline="True"/>
+                <input variable="f2[0]"/>
+                <output expression="&quot;enter the second digit of the second number below&quot;" newline="True"/>
+                <input variable="f2[1]"/>
+                <declare name="integ1" type="Integer" array="False" size=""/>
+                <declare name="integ2" type="Integer" array="False" size=""/>
+                <assign variable="integ1" expression="f1[0]*10 + f1[1]"/>
+                <assign variable="integ2" expression="f2[0]*10 + f2[1]"/>
+                <declare name="a" type="Integer" array="False" size=""/>
+                <declare name="b" type="Integer" array="False" size=""/>
+                <assign variable="a" expression="integ1"/>
+                <assign variable="b" expression="integ2"/>
+                <if expression="a != 0 &amp;&amp; b != 0">
+                    <then>
+                        <call expression="calc(a,b)"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;enter a non-zero value&quot;" newline="True"/>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+    <function name="calc" type="None" variable="">
+        <parameters>
+            <parameter name="a" type="Integer" array="False"/>
+            <parameter name="b" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="add" type="Integer" array="False" size=""/>
+            <declare name="sub" type="Integer" array="False" size=""/>
+            <declare name="mul" type="Integer" array="False" size=""/>
+            <declare name="div" type="Integer" array="False" size=""/>
+            <declare name="rem" type="Integer" array="False" size=""/>
+            <assign variable="add" expression="a+b"/>
+            <assign variable="sub" expression="a-b"/>
+            <assign variable="mul" expression="a*b"/>
+            <assign variable="div" expression="a/b"/>
+            <assign variable="rem" expression="a%b"/>
+            <output expression="&quot;outputs are&quot;" newline="True"/>
+            <output expression="&quot;addition = &quot; &amp; add" newline="True"/>
+            <output expression="&quot;subtraction = &quot; &amp; sub" newline="True"/>
+            <output expression="&quot;multiplication = &quot; &amp; mul" newline="True"/>
+            <output expression="&quot;quotient = &quot; &amp; div" newline="True"/>
+            <output expression="&quot;remainder = &quot; &amp; rem" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

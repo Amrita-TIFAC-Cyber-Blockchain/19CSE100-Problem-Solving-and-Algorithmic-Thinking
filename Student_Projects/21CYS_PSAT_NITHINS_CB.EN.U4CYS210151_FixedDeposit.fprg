@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="crossover"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-02-02 01:55:45 PM"/>
+        <attribute name="created" value="Y3Jvc3NvdmVyO05JVEhJTlMtQUlSOzIwMjItMDEtMzA7MDM6MTU6NTUgUE07MzA3Nw=="/>
+        <attribute name="edited" value="Y3Jvc3NvdmVyO05JVEhJTlMtQUlSOzIwMjItMDItMDI7MDE6NTU6NDUgUE07MTk7MzI0Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="roi" type="Real" array="True" size="6"/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="Amount" type="Real" array="False" size=""/>
+            <declare name="Returns" type="Real" array="False" size=""/>
+            <assign variable="roi[1]" expression="3.0"/>
+            <assign variable="roi[2]" expression="4.0"/>
+            <assign variable="roi[3]" expression="5.0"/>
+            <assign variable="roi[4]" expression="5.5"/>
+            <assign variable="roi[5]" expression="6.0"/>
+            <declare name="r" type="Real" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <input variable="Amount"/>
+            <if expression="n&lt;5">
+                <then>
+                    <assign variable="r" expression="roi[n]"/>
+                    <call expression="FixedDeposit(Amount,r,n)"/>
+                    <assign variable="Returns" expression="FixedDeposit(Amount,r,n)"/>
+                    <output expression="&quot;The final amount after the completion of tenure is &quot;&amp;Returns&amp;&quot; &quot;" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="r" expression="roi[5]"/>
+                    <call expression="FixedDeposit(Amount,r,n)"/>
+                    <assign variable="Returns" expression="FixedDeposit(Amount,r,n)"/>
+                    <output expression="&quot;The final amount after completion of tenure is &quot;&amp;Returns&amp;&quot; &quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="FixedDeposit" type="Real" variable="Returns">
+        <parameters>
+            <parameter name="Amount" type="Real" array="False"/>
+            <parameter name="r" type="Real" array="False"/>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Returns" type="Real" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="1" end="n" direction="inc" step="1">
+                <assign variable="Returns" expression="Amount+((Amount*r)/100)"/>
+                <assign variable="Amount" expression="Returns"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

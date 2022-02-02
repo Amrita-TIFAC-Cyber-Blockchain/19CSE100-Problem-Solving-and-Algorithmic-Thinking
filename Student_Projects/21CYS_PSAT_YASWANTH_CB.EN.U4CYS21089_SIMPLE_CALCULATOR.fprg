@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="sys"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-02-02 02:34:34 PM"/>
+        <attribute name="created" value="c3lzO0RFU0tUT1AtTEJET0pWSzsyMDIyLTAxLTI0OzAzOjM4OjI1IFBNOzI3MzY="/>
+        <attribute name="edited" value="c3lzO0RFU0tUT1AtTEJET0pWSzsyMDIyLTAyLTAyOzAyOjM0OjM0IFBNOzM2OzI4OTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, k" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the number of digits of 1st number:&quot;" newline="True"/>
+            <input variable="n"/>
+            <output expression="&quot;Enter the number of digits of 2st number:&quot;" newline="True"/>
+            <input variable="k"/>
+            <call expression="ArthematicOperation(n,k)&#13;&#10;"/>
+        </body>
+    </function>
+    <function name="ArthematicOperation" type="None" variable="">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+            <parameter name="k" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="Addition, subtraction, multiplication, x, y" type="Integer" array="False" size=""/>
+            <declare name="Select" type="String" array="False" size=""/>
+            <declare name="yes" type="String" array="False" size=""/>
+            <declare name="a, b" type="Integer" array="False" size=""/>
+            <assign variable="a" expression="first(n)"/>
+            <assign variable="b" expression="second(k)"/>
+            <assign variable="Addition" expression="a + b"/>
+            <assign variable="subtraction" expression="a - b"/>
+            <assign variable="multiplication" expression="(a)*(b)"/>
+            <output expression="&quot;Addition of the given two numbers:&quot;" newline="True"/>
+            <output expression="Addition" newline="True"/>
+            <output expression="&quot;Subtraction of the given two numbers:&quot;" newline="True"/>
+            <output expression="subtraction" newline="True"/>
+            <output expression="&quot;Multiplication of the given two numbers:&quot;" newline="True"/>
+            <output expression="multiplication" newline="True"/>
+            <if expression="a &gt; b">
+                <then>
+                    <output expression="&quot; The quotient when 1st number divided by 2nd number:&quot;" newline="True"/>
+                    <assign variable="x" expression="a/b"/>
+                    <output expression="x" newline="True"/>
+                    <output expression="&quot;Remainder when 1st number is divided by 2nd number:&quot;" newline="True"/>
+                    <assign variable="y" expression="a%b"/>
+                    <output expression="y" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot; The quotient when 2nd number divided by 1st number:&quot;" newline="True"/>
+                    <assign variable="x" expression="b/a"/>
+                    <output expression="x" newline="True"/>
+                    <output expression="&quot;Remainder when 2nd number is divided by 1st number:&quot;" newline="True"/>
+                    <assign variable="y" expression="b%a"/>
+                    <output expression="y" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;Enter yes to use again or Enter no to not use:&quot;" newline="True"/>
+            <input variable="Select"/>
+            <if expression="Select == &quot;yes&quot;">
+                <then>
+                    <call expression="Main"/>
+                </then>
+                <else>
+                    <output expression="&quot;Thanks for using the Calculator&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="first" type="Integer" variable="p">
+        <parameters>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="first" type="Integer" array="True" size="n"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="m" type="Integer" array="False" size=""/>
+            <declare name="p" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the digits of 1st number in sequence:&quot;" newline="True"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;Enter digit:&quot; &amp;(i+1)" newline="True"/>
+                <input variable="first[i]"/>
+            </for>
+            <assign variable="p" expression="0"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <assign variable="m" expression="(first[i])*(10^((n-1)-i))"/>
+                <assign variable="p" expression="m + p"/>
+            </for>
+            <output expression="&quot;The 1st number is:&quot;" newline="True"/>
+            <output expression="p" newline="True"/>
+        </body>
+    </function>
+    <function name="second" type="Integer" variable="h">
+        <parameters>
+            <parameter name="k" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="second" type="Integer" array="True" size="k"/>
+            <declare name="v" type="Integer" array="False" size=""/>
+            <declare name="d" type="Integer" array="False" size=""/>
+            <declare name="h" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the digits of 2nd number in sequence:&quot;" newline="True"/>
+            <for variable="v" start="0" end="k-1" direction="inc" step="1">
+                <output expression="&quot;Enter digit:&quot; &amp;(v+1)" newline="True"/>
+                <input variable="second[v]"/>
+            </for>
+            <assign variable="h" expression="0"/>
+            <for variable="v" start="0" end="k-1" direction="inc" step="1">
+                <assign variable="d" expression="(second[v])*(10^((k-1)-v))"/>
+                <assign variable="h" expression="d + h"/>
+            </for>
+            <output expression="&quot;The second number is:&quot;" newline="True"/>
+            <output expression="h" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Vishnu K"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-02-02 02:53:41 PM"/>
+        <attribute name="created" value="VmlzaG51IEs7VklTSE5VLUcxNTsyMDIyLTAxLTI5OzExOjM0OjM0IEFNOzI3MDI="/>
+        <attribute name="edited" value="VmlzaG51IEs7VklTSE5VLUcxNTsyMDIyLTAxLTI5OzEyOjQzOjUzIFBNOzE7MjgyNw=="/>
+        <attribute name="edited" value="RGVsbDtERVNLVE9QLTVVUUZRM1M7MjAyMi0wMi0wMjswMjo1Mzo0MSBQTTszOzI4NTE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="counter" type="Integer" array="False" size=""/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <declare name="total" type="Integer" array="False" size=""/>
+            <assign variable="total" expression="0"/>
+            <declare name="sum1" type="Integer" array="False" size=""/>
+            <assign variable="sum1" expression="0"/>
+            <declare name="sum2" type="Integer" array="False" size=""/>
+            <assign variable="sum2" expression="0"/>
+            <declare name="sum3" type="Integer" array="False" size=""/>
+            <assign variable="sum3" expression="0"/>
+            <declare name="arr1" type="Integer" array="True" size="4"/>
+            <declare name="arr2" type="Integer" array="True" size="4"/>
+            <declare name="arr3" type="Integer" array="True" size="4"/>
+            <declare name="arr4" type="Integer" array="True" size="4"/>
+            <for variable="counter" start="0" end="3" direction="inc" step="1">
+                <input variable="arr1[counter]"/>
+                <input variable="arr2[counter]"/>
+                <input variable="arr3[counter]"/>
+                <input variable="arr4[counter]"/>
+            </for>
+            <for variable="counter" start="0" end="3" direction="inc" step="1">
+                <if expression="arr1[counter]+arr2[counter]+arr3[counter]+arr4[counter]==34">
+                    <then>
+                        <for variable="j" start="0" end="3" direction="inc" step="1">
+                            <for variable="j" start="0" end="3" direction="inc" step="1">
+                                <assign variable="total" expression="arr1[j]+total"/>
+                                <assign variable="sum1" expression="arr2[j]+sum1"/>
+                                <assign variable="sum2" expression="arr3[j]+sum2"/>
+                                <assign variable="sum3" expression="arr4[j]+sum3"/>
+                            </for>
+                            <if expression="total==34 &amp;&amp; sum1==34 &amp;&amp; sum2==34 &amp;&amp; sum3==34">
+                                <then>
+                                    <if expression="arr1[0]+arr2[1]+arr3[2]+arr4[3]==34">
+                                        <then>
+                                            <if expression="arr1[3]+arr2[2]+arr3[1]+arr4[0]==34">
+                                                <then>
+                                                    <output expression="&quot;it is a magic square&quot;" newline="True"/>
+                                                    <breakpoint/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;not a magic square&quot;" newline="True"/>
+                                                    <breakpoint/>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;not a magic square&quot;" newline="True"/>
+                                            <breakpoint/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <output expression="&quot;not a magic square&quot;" newline="True"/>
+                                    <breakpoint/>
+                                </else>
+                            </if>
+                        </for>
+                    </then>
+                    <else>
+                        <output expression="&quot;not a magic square&quot;" newline="True"/>
+                        <breakpoint/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

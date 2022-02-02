@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Dyanesh"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-02-02 03:35:09 PM"/>
+        <attribute name="created" value="RHlhbmVzaDtVUkFOSVVNOzIwMjItMDEtMjI7MDU6Mzg6MTkgUE07MjU0Mg=="/>
+        <attribute name="edited" value="RHlhbmVzaDtVUkFOSVVNOzIwMjItMDItMDI7MDM6MzU6MDkgUE07MzsyNjQ1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, n, j" type="Integer" array="False" size=""/>
+            <declare name="arrParameter" type="Real" array="True" size="3"/>
+            <output expression="&quot;How many steels you want to Grade: &quot;" newline="False"/>
+            <input variable="n"/>
+            <for variable="i" start="1" end="n" direction="inc" step="1">
+                <output expression="&quot;Enter Data for &quot;" newline="False"/>
+                <output expression="i" newline="False"/>
+                <output expression="&quot; : &quot;" newline="False"/>
+                <for variable="j" start="0" end="2" direction="inc" step="1">
+                    <input variable="arrParameter[j]"/>
+                </for>
+                <output expression="&quot;Grade for &quot;" newline="False"/>
+                <output expression="i" newline="False"/>
+                <output expression="&quot; : &quot;" newline="False"/>
+                <call expression="gradeSteel(arrParameter)"/>
+            </for>
+        </body>
+    </function>
+    <function name="gradeSteel" type="None" variable="grade">
+        <parameters>
+            <parameter name="arr" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <declare name="grade" type="Integer" array="False" size=""/>
+            <if expression="arr[0] &gt; 50">
+                <then>
+                    <if expression="arr[1] &lt; 0.7">
+                        <then>
+                            <if expression="arr[2] &gt; 5600">
+                                <then>
+                                    <assign variable="grade" expression="10"/>
+                                </then>
+                                <else>
+                                    <assign variable="grade" expression="9"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="arr[2] &gt; 5600">
+                                <then>
+                                    <assign variable="grade" expression="7"/>
+                                </then>
+                                <else>
+                                    <assign variable="grade" expression="6"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="arr[1] &lt; 0.7">
+                        <then>
+                            <if expression="arr[2] &gt; 5600">
+                                <then>
+                                    <assign variable="grade" expression="8"/>
+                                </then>
+                                <else>
+                                    <assign variable="grade" expression="6"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="arr[2] &gt; 5600">
+                                <then>
+                                    <assign variable="grade" expression="6"/>
+                                </then>
+                                <else>
+                                    <assign variable="grade" expression="5"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="grade" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

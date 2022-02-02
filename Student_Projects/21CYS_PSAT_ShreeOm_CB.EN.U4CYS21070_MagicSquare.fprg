@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Shree Om Sharma"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-02-02 02:17:26 PM"/>
+        <attribute name="created" value="U2hyZWUgT20gU2hhcm1hO0xBUFRPUC0ySUdTRU1MTDsyMDIyLTAxLTI4OzEwOjE1OjQzIFBNOzM3MTg="/>
+        <attribute name="edited" value="U2hyZWUgT20gU2hhcm1hO0xBUFRPUC0ySUdTRU1MTDsyMDIyLTAyLTAyOzAyOjE3OjI2IFBNOzE0OzM4NzU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Welcome to magic square&quot;" newline="True"/>
+            <output expression="&quot;Let's Start&quot;" newline="True"/>
+            <output expression="&quot;Following are the options&quot;" newline="True"/>
+            <output expression="&quot;1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16&quot;" newline="True"/>
+            <call expression="checkMagicSquare"/>
+        </body>
+    </function>
+    <function name="checkMagicSquare" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="A" type="Integer" array="True" size="4"/>
+            <input variable="A[0]"/>
+            <input variable="A[1]"/>
+            <input variable="A[2]"/>
+            <input variable="A[3]"/>
+            <declare name="B" type="Integer" array="True" size="4"/>
+            <input variable="B[0]"/>
+            <input variable="B[1]"/>
+            <input variable="B[2]"/>
+            <input variable="B[3]"/>
+            <declare name="C" type="Integer" array="True" size="4"/>
+            <input variable="C[0]"/>
+            <input variable="C[1]"/>
+            <input variable="C[2]"/>
+            <input variable="C[3]"/>
+            <declare name="D" type="Integer" array="True" size="4"/>
+            <input variable="D[0]"/>
+            <input variable="D[1]"/>
+            <input variable="D[2]"/>
+            <input variable="D[3]"/>
+            <if expression="A[0]+B[0]+C[0]+D[0]=34">
+                <then>
+                    <if expression="A[1]+B[1]+C[1]+D[1]=34">
+                        <then>
+                            <if expression="A[2]+B[2]+C[2]+D[2]=34">
+                                <then>
+                                    <if expression="A[3]+B[3]+C[3]+D[3]=34">
+                                        <then>
+                                            <if expression="A[0]+A[1]+A[2]+A[3]=34">
+                                                <then>
+                                                    <if expression="B[0]+B[1]+B[2]+B[3]=34">
+                                                        <then>
+                                                            <if expression="C[0]+C[1]+C[2]+C[3]=34">
+                                                                <then>
+                                                                    <if expression="D[0]+D[1]+D[2]+D[3]=34">
+                                                                        <then>
+                                                                            <if expression="A[0]+B[1]+C[2]+D[3]=34">
+                                                                                <then>
+                                                                                    <if expression="D[0]+C[1]+B[2]+A[3]=34">
+                                                                                        <then>
+                                                                                            <output expression="&quot;Wow,You've succesfully completed magic square&quot;" newline="True"/>
+                                                                                        </then>
+                                                                                        <else>
+                                                                                            <output expression="&quot;This is not a magic square&quot;" newline="True"/>
+                                                                                        </else>
+                                                                                    </if>
+                                                                                </then>
+                                                                                <else>
+                                                                                    <output expression="&quot;This is not a magic square&quot;" newline="True"/>
+                                                                                </else>
+                                                                            </if>
+                                                                        </then>
+                                                                        <else>
+                                                                            <output expression="&quot;This is not a magic square&quot;" newline="True"/>
+                                                                        </else>
+                                                                    </if>
+                                                                </then>
+                                                                <else>
+                                                                    <output expression="&quot;This is not a magic square&quot;" newline="True"/>
+                                                                </else>
+                                                            </if>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;This is not a magic square&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;This is not a magic square&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;This is not a magic square&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <output expression="&quot;This is not a magic square&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;This is not a magic square&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;This is not a magic square&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

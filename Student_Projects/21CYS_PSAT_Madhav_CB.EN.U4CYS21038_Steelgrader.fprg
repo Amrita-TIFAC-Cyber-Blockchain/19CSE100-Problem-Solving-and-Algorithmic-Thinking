@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Madhav H"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-01-28 10:48:01 AM"/>
+        <attribute name="created" value="TWFkaGF2IEg7REVTS1RPUC1VUzgyMkcwOzIwMjItMDEtMjI7MDU6MTE6NTkgUE07Mjk5OQ=="/>
+        <attribute name="edited" value="TWFkaGF2IEg7REVTS1RPUC1VUzgyMkcwOzIwMjItMDEtMjg7MTA6NDg6MDEgQU07NTszMDk1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, n, hardness, tstrength" type="Integer" array="False" size=""/>
+            <declare name="carbc" type="Real" array="False" size=""/>
+            <output expression="&quot;How many steels you want to grade:&quot;" newline="True"/>
+            <input variable="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;Enter data for &quot;&amp;i+1" newline="True"/>
+                <input variable="hardness"/>
+                <input variable="carbc"/>
+                <input variable="tstrength"/>
+                <call expression="gradeSteel(hardness,carbc,tstrength)"/>
+            </for>
+        </body>
+    </function>
+    <function name="gradeSteel" type="None" variable="">
+        <parameters>
+            <parameter name="hardness" type="Integer" array="False"/>
+            <parameter name="carbc" type="Real" array="False"/>
+            <parameter name="tstrength" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <if expression="hardness&gt;50 &amp;&amp; carbc&lt;0.7 &amp;&amp; tstrength&gt;5600">
+                <then>
+                    <output expression="&quot;Grade is 10&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="hardness&gt;50 &amp;&amp; carbc&lt;0.7">
+                        <then>
+                            <output expression="&quot;Grade is 9&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="carbc&lt;0.7 &amp;&amp; tstrength&gt;5600">
+                                <then>
+                                    <output expression="&quot;Grade is 8&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="hardness&gt;50 &amp;&amp; tstrength&gt;5600">
+                                        <then>
+                                            <output expression="&quot;Grade is 7&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="hardness&gt;50 || carbc&lt;0.7 || tstrength&gt;5600">
+                                                <then>
+                                                    <output expression="&quot;Grade is 6&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;Grade is 5&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

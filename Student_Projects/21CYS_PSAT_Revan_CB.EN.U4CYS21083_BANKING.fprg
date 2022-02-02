@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="revan"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-02-02 03:22:57 PM"/>
+        <attribute name="created" value="cmV2YW47TEFQVE9QLTIyVDlONVRWOzIwMjItMDEtMjQ7MDI6MDk6MTIgUE07Mjg2Mg=="/>
+        <attribute name="edited" value="cmV2YW47TEFQVE9QLTIyVDlONVRWOzIwMjItMDEtMjQ7MDI6MTU6NTcgUE07ODtyZXZhbjtMQVBUT1AtMjJUOU41VFY7MjAyMi0wMS0yMzsxMjoyMDo1NiBQTTtmb3IgbG9vcCBQcm9qZWN0IEltcGxlbWVudGF0aW9uLmZwcmc7OTUxMQ=="/>
+        <attribute name="edited" value="cmV2YW47TEFQVE9QLTIyVDlONVRWOzIwMjItMDItMDI7MDM6MjI6NTcgUE07MjEzOzMwNzM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Username" type="String" array="False" size=""/>
+            <declare name="UserID" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter Your Username to Access the Services&quot;" newline="True"/>
+            <comment text="Username = enter the users name to login into the Banking Services"/>
+            <input variable="Username"/>
+            <call expression="Side (Username)"/>
+            <comment text="UserID = Enter the User number to get access into the account balance"/>
+            <input variable="UserID"/>
+            <call expression="welcome (Username)"/>
+            <call expression="banking (UserID)"/>
+        </body>
+    </function>
+    <function name="welcome" type="None" variable="">
+        <parameters>
+            <parameter name="Username" type="String" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;WELCOME TO ONLINE BANKING SERVICE: &quot; &amp;Username" newline="True"/>
+            <output expression="&quot;For Using Services below enter Option Number&quot;" newline="True"/>
+            <output expression="&quot;Withdrawl = 1&quot;" newline="True"/>
+            <output expression="&quot;Deposit = 2&quot;" newline="True"/>
+            <output expression="&quot;Refer a Friend = 3&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="banking" type="None" variable="UserID">
+        <parameters>
+            <parameter name="UserID" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="reply" type="String" array="False" size=""/>
+            <declare name="balance" type="Integer" array="True" size="5"/>
+            <declare name="i, Option" type="Integer" array="False" size=""/>
+            <assign variable="balance[0]" expression="21083"/>
+            <assign variable="balance[1]" expression="30000"/>
+            <assign variable="balance[2]" expression="45000"/>
+            <assign variable="balance[3]" expression="10000"/>
+            <assign variable="balance[4]" expression="1000"/>
+            <input variable="Option"/>
+            <if expression="Option == 1">
+                <then>
+                    <declare name="Withdrawlamount, minimum, remaining" type="Integer" array="False" size=""/>
+                    <assign variable="minimum" expression="500"/>
+                    <comment text="Withdrawlamount = money which has to be withdrawl from account"/>
+                    <output expression="&quot;Your Account Balance is: &quot; &amp;balance[UserID-1]" newline="True"/>
+                    <output expression="&quot;Enter The Amount To Withdraw&quot;" newline="True"/>
+                    <input variable="Withdrawlamount"/>
+                    <assign variable="remaining" expression="balance[UserID-1] - Withdrawlamount"/>
+                    <comment text="remianing = balance available in the account after withdrawl&#13;&#10;"/>
+                    <if expression="remaining &gt;= 500">
+                        <then>
+                            <output expression="&quot;amount withdraw is&quot; &amp;Withdrawlamount" newline="True"/>
+                            <output expression="&quot;Your Account Balance is: &quot; &amp;remaining" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;insufficeint balance&quot;" newline="True"/>
+                        </else>
+                    </if>
+                    <output expression="&quot;Want To Use Any Other Services&quot;" newline="True"/>
+                    <output expression="&quot;yes (or) no&quot;" newline="True"/>
+                    <input variable="reply"/>
+                    <if expression="reply == &quot;yes&quot;">
+                        <then>
+                            <output expression="&quot;Select The Below Options&quot;" newline="True"/>
+                            <output expression="&quot;Withdrawl = 1&quot;" newline="True"/>
+                            <output expression="&quot;Deposit = 2&quot;" newline="True"/>
+                            <output expression="&quot;Refer a Friend = 3&quot;" newline="True"/>
+                            <output expression="&quot;EXIT = 4&quot;" newline="True"/>
+                            <call expression="Select(UserID)"/>
+                        </then>
+                        <else>
+                            <output expression="&quot; THANK YOU &quot;" newline="True"/>
+                            <output expression="&quot;HAVE A NICE DAY&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="Option == 2">
+                        <then>
+                            <declare name="depositamount" type="Integer" array="False" size=""/>
+                            <comment text="depositamount = amount that has to be deposited in account"/>
+                            <output expression="&quot;Enter The Amount You Wish To Deposit In Your Account&quot;" newline="True"/>
+                            <input variable="depositamount"/>
+                            <assign variable="balance[UserID-1]" expression="balance[UserID-1] + depositamount"/>
+                            <output expression="&quot;Balance In Your Account Is &quot; &amp;balance[UserID-1]" newline="True"/>
+                            <output expression="&quot;Want To Use Any Other Services&quot;" newline="True"/>
+                            <output expression="&quot;yes (or) no&quot;" newline="True"/>
+                            <input variable="reply"/>
+                            <if expression="reply == &quot;yes&quot;">
+                                <then>
+                                    <output expression="&quot;Select The Below Options&quot;" newline="True"/>
+                                    <output expression="&quot;Withdrawl = 1&quot;" newline="True"/>
+                                    <output expression="&quot;Deposit = 2&quot;" newline="True"/>
+                                    <output expression="&quot;Refer a Friend = 3&quot;" newline="True"/>
+                                    <output expression="&quot;EXIT = 4&quot;" newline="True"/>
+                                    <call expression="Select(UserID)"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot; THANK YOU &quot;" newline="True"/>
+                                    <output expression="&quot;HAVE A NICE DAY&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="Option == 3">
+                                <then>
+                                    <declare name="friendname" type="String" array="False" size=""/>
+                                    <declare name="phonenumber" type="Integer" array="False" size=""/>
+                                    <comment text="friendname = Refering friend name"/>
+                                    <output expression="&quot;Enter The Name Of The Friend You're Referring&quot;" newline="True"/>
+                                    <input variable="friendname"/>
+                                    <output expression="&quot;Enter The PhoneNumber Of Yo're Friend&quot;" newline="True"/>
+                                    <comment text="phonenumber = refering friend phone number"/>
+                                    <input variable="phonenumber"/>
+                                    <output expression="&quot;THANK YOU for refereing your friend &quot; &amp;friendname" newline="True"/>
+                                    <output expression="&quot;Rs.50 has been credited in your Account&quot;" newline="True"/>
+                                    <assign variable="balance[UserID-1]" expression="balance[userID-1]+50"/>
+                                    <output expression="&quot;Your account available balance is &quot; &amp;balance[UserID-1]" newline="True"/>
+                                    <output expression="&quot;Want To Use Any Other Services&quot;" newline="True"/>
+                                    <output expression="&quot;yes (or) no&quot;" newline="True"/>
+                                    <input variable="reply"/>
+                                    <if expression="reply == &quot;yes&quot;">
+                                        <then>
+                                            <output expression="&quot;Select The Below Options&quot;" newline="True"/>
+                                            <output expression="&quot;Withdrawl = 1&quot;" newline="True"/>
+                                            <output expression="&quot;Deposit = 2&quot;" newline="True"/>
+                                            <output expression="&quot;Refer a Friend = 3&quot;" newline="True"/>
+                                            <output expression="&quot;EXIT = 4&quot;" newline="True"/>
+                                            <call expression="Select(UserID)"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot; THANK YOU &quot;" newline="True"/>
+                                            <output expression="&quot;HAVE A NICE DAY&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <if expression="Option == 4">
+                                        <then>
+                                            <output expression="&quot; THANK YOU &quot;" newline="True"/>
+                                            <output expression="&quot;HAVE A NICE DAY&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Select The Options That are Available&quot;" newline="True"/>
+                                            <call expression="Select(Option)"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Side" type="None" variable="">
+        <parameters>
+            <parameter name="Username" type="String" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;Enter Your UserID number to Access the Services: &quot; &amp;Username" newline="True"/>
+            <output expression="&quot;1 to 5&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

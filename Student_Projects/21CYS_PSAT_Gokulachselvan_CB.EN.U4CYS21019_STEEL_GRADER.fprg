@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Welcome"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-02-02 02:01:03 PM"/>
+        <attribute name="created" value="V2VsY29tZTtHT0tVTDsyMDIyLTAxLTI2OzA4OjAzOjI1IFBNOzIzNzk="/>
+        <attribute name="edited" value="V2VsY29tZTtHT0tVTDsyMDIyLTAyLTAyOzAyOjAxOjAzIFBNOzEwOzI1MTg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="number, i" type="Integer" array="False" size=""/>
+            <declare name="steeldata" type="Integer" array="True" size="3"/>
+            <output expression="&quot;HOW MANY STEELS YOU WANT TO GRADE:&quot;" newline="True"/>
+            <input variable="number"/>
+            <for variable="i" start="1" end="number" direction="inc" step="1">
+                <output expression="&quot;Enter the data for steel &quot; &amp;i" newline="True"/>
+                <comment text="Hardness"/>
+                <input variable="steeldata[0]"/>
+                <comment text="Carbon content"/>
+                <input variable="steeldata[1]"/>
+                <comment text="Tensile Strength"/>
+                <input variable="steeldata[2]"/>
+                <output expression="&quot;Grade for steel &quot; &amp;i" newline="True"/>
+                <output expression="gradesteel(steeldata[0],steeldata[1],steeldata[2])" newline="True"/>
+            </for>
+        </body>
+    </function>
+    <function name="gradesteel" type="Integer" variable="result">
+        <parameters>
+            <parameter name="hardness" type="Integer" array="False"/>
+            <parameter name="carboncontent" type="Integer" array="False"/>
+            <parameter name="strength" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="result" type="Integer" array="False" size=""/>
+            <if expression="hardness&gt;50 &amp;&amp; carboncontent&lt;0.7 &amp;&amp; strength&gt;5600">
+                <then>
+                    <assign variable="result" expression="10"/>
+                </then>
+                <else>
+                    <if expression="hardness&gt;50 &amp;&amp; carboncontent&lt;0.7">
+                        <then>
+                            <assign variable="result" expression="9"/>
+                        </then>
+                        <else>
+                            <if expression="carboncontent&lt;0.7 &amp;&amp; strength&gt;5600">
+                                <then>
+                                    <assign variable="result" expression="8"/>
+                                </then>
+                                <else>
+                                    <if expression="hardness&gt;50 &amp;&amp; strength&gt;5600">
+                                        <then>
+                                            <assign variable="result" expression="7"/>
+                                        </then>
+                                        <else>
+                                            <if expression="hardness&gt;50 || carboncontent&lt;0.7 || strength&gt;5600">
+                                                <then>
+                                                    <assign variable="result" expression="6"/>
+                                                </then>
+                                                <else>
+                                                    <assign variable="result" expression="5"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
