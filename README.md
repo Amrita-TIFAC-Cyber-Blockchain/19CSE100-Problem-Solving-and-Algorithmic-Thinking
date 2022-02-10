@@ -1,6 +1,6 @@
-# 19CSE100 - Problem Solving and Algorithmic Thinking (PSAT)
+# 19CSE100 - Problem Solving and Algorithmic Thinking (PSAT) ![](https://img.shields.io/badge/-Completed-darkgreen)
 
-This repository maintains the course contents and materials taught as part of PSAT Course. 
+This repository maintains the course contents and materials for **Problem Solving and Algorithmic Thinking - Lab.** 
 
 ##### :teacher: Course Co-Instructor:  Ramaguru R, Assistant Professor, TIFAC-CORE in Cyber Security.
 
