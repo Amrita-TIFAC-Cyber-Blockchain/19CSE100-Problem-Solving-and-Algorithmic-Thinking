@@ -6,8 +6,8 @@ This repository maintains the course contents and materials for **Problem Solvin
 ##### :teacher: Course Co-Instructor:  Ramaguru R, Assistant Professor, TIFAC-CORE in Cyber Security.
 
 ## :notebook: Materials and Resoruces
-- [Flowgramming](Flowgramming.md)
-- [Flowgorithm](Flowgorithm.md)
+- [Lab - 1: Flowgramming](Flowgramming.md)
+- [Lab - 2: Flowgorithm](Flowgorithm.md)
 
 ## Student Projects
 - [Usecase Mini Project](Students_Projects/List.md)
