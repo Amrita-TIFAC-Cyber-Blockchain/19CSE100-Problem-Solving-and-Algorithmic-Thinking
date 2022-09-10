@@ -7,7 +7,14 @@ This repository maintains the course contents and materials for **Problem Solvin
 
 ## Batches
 
-#### B.Tech CSE (CYS) 2021 
+#### [B.Tech CSE (CYS) 2021](https://amrita-tifac-cyber-blockchain.github.io/19CSE100-Problem-Solving-and-Algorithmic-Thinking/21CYS) 
+
+##### Tools used
+ - Flowgramming
+ - Flowgorithm
 
 
-#### B.Tech CSE (CYS) 2022
+#### [B.Tech CSE (CYS) 2022](https://amrita-tifac-cyber-blockchain.github.io/19CSE100-Problem-Solving-and-Algorithmic-Thinking/22CYS)
+
+##### Tools used
+ - Flowgorithm
