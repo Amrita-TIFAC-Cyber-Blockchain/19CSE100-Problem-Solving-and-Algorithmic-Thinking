@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Aki"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-02 09:34:27 AM"/>
+        <attribute name="created" value="QWtpO1RFUkFDT1RUQV9QSUU7MjAyMi0xMi0wMjswOTowOTo0NSBBTTsyNTQw"/>
+        <attribute name="edited" value="QWtpO1RFUkFDT1RUQV9QSUU7MjAyMi0xMi0wMjswOTozNDoyNyBBTTszOzI2NDg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, prod" type="Integer" array="False" size=""/>
+            <assign variable="prod" expression="1"/>
+            <assign variable="i" expression="1"/>
+            <while expression="i&lt;11">
+                <assign variable="prod" expression="prod*i"/>
+                <assign variable="i" expression="i+1"/>
+            </while>
+            <output expression="&quot;The factorial of first 10 natural numbers is: &quot; &amp; prod" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

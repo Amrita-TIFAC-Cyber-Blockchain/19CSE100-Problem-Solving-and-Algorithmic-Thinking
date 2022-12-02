@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Aki"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-02 09:33:30 AM"/>
+        <attribute name="created" value="QWtpO1RFUkFDT1RUQV9QSUU7MjAyMi0xMi0wMjswOTowOTo0NSBBTTsyNTQw"/>
+        <attribute name="edited" value="QWtpO1RFUkFDT1RUQV9QSUU7MjAyMi0xMi0wMjswOTozMzozMCBBTTsyOzI2NDA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, sum" type="Integer" array="False" size=""/>
+            <assign variable="sum" expression="0"/>
+            <assign variable="i" expression="1"/>
+            <while expression="i&lt;11">
+                <assign variable="sum" expression="sum+i"/>
+                <assign variable="i" expression="i+1"/>
+            </while>
+            <output expression="&quot;The sum of first 10 natural numbers is: &quot; &amp; sum" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
