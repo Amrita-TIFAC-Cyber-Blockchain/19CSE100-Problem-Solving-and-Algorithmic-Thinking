@@ -1,9 +1,10 @@
-# 19CSE100 - Problem Solving and Algorithmic Thinking (PSAT)
-
+# 19CSE100 - Problem Solving and Algorithmic Thinking (PSAT) ![](https://img.shields.io/badge/-Live-green)
+![](https://img.shields.io/badge/Batch-22CYS-lightgreen) 
+ 
 ## Assignments
 
-###  Programming Languages Survey 
-
+###  Programming Languages Survey ![](https://img.shields.io/badge/-Individual-purple) 
+ 
 | Language |  Roll Numbers | 
 |:--------:|:-------------:|
 |   C      |  42, 53, 59   |
@@ -32,4 +33,16 @@
 |   PHP       | 26, 29, 69 |
 |   Simula    | 12, 33, 60 |
 
- 
+### Project ![](https://img.shields.io/badge/-Team-purple) 
+
+|     Project Title    |     Batch 1   |     Batch 2   |     Batch 3    | 
+|:--------------------:|:-------------:|:-------------:|:--------------:|
+| IPL Scheduler        |               |               |                |
+| TimeTable Scheduler  |               |               |                |
+| Magic Square Solver  |               |               |                |
+| Sudoku Solver        |               |               |                |
+| Tic-Tac-Toe          |               |               |                |
+| Auto Suggest         |               |               |                |
+| Grammar Check        |               |               |                |
+|                      |               |               |                |
+
