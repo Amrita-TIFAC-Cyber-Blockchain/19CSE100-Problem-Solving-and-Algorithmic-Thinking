@@ -1,5 +1,5 @@
-# 19CSE100 - Problem Solving and Algorithmic Thinking (PSAT) 
-![](https://img.shields.io/badge/Batch-CYS-lightgreen) ![](https://img.shields.io/badge/UG-blue) ![](https://img.shields.io/badge/Subject-PSAT-blue)
+# 19CSE100 - Problem Solving and Algorithmic Thinking (PSAT)  ![](https://img.shields.io/badge/-Live-green)
+![](https://img.shields.io/badge/Batch-21CYS-lightgreen) ![](https://img.shields.io/badge/Batch-22CYS-lightgreen) ![](https://img.shields.io/badge/UG-blue) ![](https://img.shields.io/badge/Subject-PSAT-blue)
 
 This repository maintains the course contents and materials for **Problem Solving and Algorithmic Thinking - Lab.** 
 
