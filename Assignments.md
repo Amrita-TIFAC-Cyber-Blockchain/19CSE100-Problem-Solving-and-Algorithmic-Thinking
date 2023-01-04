@@ -8,7 +8,7 @@
 | Language |  Roll Numbers | 
 |:--------:|:-------------:|
 |   C      |  42, 53, 59   |
-|   C++    |  07, 47   |
+|   C++    |   47, 64   |
 |   Java   |  13, 62, 67   |
 |   Python |  19, 39, 44   |
 |   Go     |  48, 52, 71   |
@@ -37,12 +37,12 @@
 
 |     Project Title    |     Batch 1   |     Batch 2   |     Batch 3    | 
 |:--------------------:|:-------------:|:-------------:|:--------------:|
-| IPL Scheduler        |               |               |                |
-| TimeTable Scheduler  |               |               |                |
-| Magic Square Solver  |               |               |                |
-| Sudoku Solver        |               |               |                |
-| Tic-Tac-Toe          |               |               |                |
-| Auto Suggest         |               |               |                |
-| Grammar Check        |               |               |                |
-|                      |               |               |                |
+| IPL Scheduler        | 46, 42, 66    |  08, 10, 72   |  52, 06, 67    |
+| TimeTable Scheduler  | 49, 74, 60    |  68, 33, 09   |  41, 24, 13    |
+| Magic Square Solver  | 05, 02, 15    |  07, 73, 69   |  28, 25, 70    |
+| Sudoku Solver        | 26, 03, 40    |  38, 17, 59   |  18, 12, 01    |
+| Tic-Tac-Toe          | 34, 32, 62    |  45, 50, 23   |  47, 71, 55    |
+| Auto Suggest         | 43, 30, 36    |  31, 76, 64   |  53, 39, 11    |
+| Grammar Check        | 27, 20, 37    |  04, 57, 21   |  63, 16, 35    |
+|                      |  75, 51, 14   |  19, 44, 61   |  56, 29, 65, 48  |
 
