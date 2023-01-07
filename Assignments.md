@@ -8,7 +8,7 @@
 | Language |  Roll Numbers | 
 |:--------:|:-------------:|
 |   C      |  42, 53, 59   |
-|   C++    |   47, 64   |
+|   C++    |   47, 64      |
 |   Java   |  13, 62, 67   |
 |   Python |  19, 39, 44   |
 |   Go     |  48, 52, 71   |
@@ -33,6 +33,8 @@
 |   PHP       | 26, 29, 69 |
 |   Simula    | 12, 33, 60 |
 
+[Click Here](Student_Projects) to view Sample Projects
+
 ### Project ![](https://img.shields.io/badge/-Team-purple) 
 
 |     Project Title    |     Batch 1   |     Batch 2   |     Batch 3    | 
@@ -44,5 +46,5 @@
 | Tic-Tac-Toe          | 34, 32, 62    |  45, 50, 23   |  47, 71, 55    |
 | Auto Suggest         | 43, 30, 36    |  31, 76, 64   |  53, 39, 11    |
 | Grammar Check        | 27, 20, 37    |  04, 57, 21   |  63, 16, 35    |
-|                      |  75, 51, 14   |  19, 44, 61   |  56, 29, 65, 48  |
+| Phone Usage Monitor  |  75, 51, 14   |  19, 44, 61   |  56, 65, 48    |
 
