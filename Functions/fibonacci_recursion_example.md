@@ -1,8 +1,12 @@
-Recursion Function:
+# PSAT 
+
+## Recursion Function - Fibonacci
+
+```
 f1=0;
-	f2=1;
+f2=1;
 	
-fibo(f1,f2)
+fibo(f1,f2,n)
 
 fibo(int f1, int f2, int n)
 {
@@ -14,6 +18,9 @@ fibo(int f1, int f2, int n)
 		print f1;
 		fibo(f2,res,n-1);		 
 }
+```
+
+## Explanation
 
 fibo(0,1,4)
 
