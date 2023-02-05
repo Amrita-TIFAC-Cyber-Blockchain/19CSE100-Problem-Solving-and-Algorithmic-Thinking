@@ -1,4 +1,6 @@
-Recursion Function:
+# PSAT 
+
+## Recursion Function - Factorial
 
 ```
 factorial(int n)
@@ -12,6 +14,7 @@ factorial(int n)
 
 }
 ```
+## Explanation
 
 factorial(5)
 	else: fact = 5 * factorial(4) => 24
