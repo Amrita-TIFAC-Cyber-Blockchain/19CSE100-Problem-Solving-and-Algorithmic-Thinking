@@ -1,5 +1,6 @@
 Recursion Function:
 
+```
 factorial(int n)
 {
 	int fact = 1;
@@ -10,6 +11,7 @@ factorial(int n)
 		return fact;
 
 }
+```
 
 factorial(5)
 	else: fact = 5 * factorial(4) => 24
