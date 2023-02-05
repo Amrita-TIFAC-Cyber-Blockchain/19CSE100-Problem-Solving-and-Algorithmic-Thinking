@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ramaguru"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-02-04 12:57:42 PM"/>
+        <attribute name="created" value="cmFtYWd1cnU7MjAxODE5SkFOQzAwMTA7MjAyMy0wMi0wNDsxMjo1MDo1OSBQTTsyOTMz"/>
+        <attribute name="edited" value="cmFtYWd1cnU7MjAxODE5SkFOQzAwMTA7MjAyMy0wMi0wNDsxMjo1Nzo0MiBQTTsyOzMwNDE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <output expression="&quot;give a number&quot;" newline="True"/>
+            <input variable="n"/>
+            <call expression="fibo(0,1,n)"/>
+        </body>
+    </function>
+    <function name="fibo" type="None" variable="">
+        <parameters>
+            <parameter name="f1" type="Integer" array="False"/>
+            <parameter name="f2" type="Integer" array="False"/>
+            <parameter name="n" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <if expression="n==0">
+                <then/>
+                <else>
+                    <declare name="res" type="Integer" array="False" size=""/>
+                    <assign variable="res" expression="f1+f2"/>
+                    <output expression="f1" newline="True"/>
+                    <call expression="fibo(f2,res,n-1)"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
